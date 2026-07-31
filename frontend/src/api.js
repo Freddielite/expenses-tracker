@@ -4,7 +4,7 @@
 // - the built app served directly by the Go backend on :8080
 // - a tunnel (cloudflared/ngrok) pointed at that single Go port, since
 //   there's only ever one origin involved, no separate port to reach.
-const BASE_URL = `/api`;
+const BASE_URL = `${import.meta.env.VITE_API_URL || ""}/api`;
 const TOKEN_KEY = "ledger-auth-token";
 const ROLE_KEY = "ledger-auth-role";
 
