@@ -1,0 +1,107 @@
+[
+  {
+    "id": "44291544a2a8fc25",
+    "name": "Shopping",
+    "type": "expense",
+    "color": "#a15c3d",
+    "icon": "shopping-bag"
+  },
+  {
+    "id": "03ed756b44788007",
+    "name": "Other",
+    "type": "expense",
+    "color": "#6b6f76",
+    "icon": "more-horizontal"
+  },
+  {
+    "id": "d42788196e8dc1c9",
+    "name": "Business",
+    "type": "income",
+    "color": "#3d5aa1",
+    "icon": "briefcase"
+  },
+  {
+    "id": "256d04e50144c4eb",
+    "name": "Data \u0026 Airtime",
+    "type": "expense",
+    "color": "#3d7a9e",
+    "icon": "smartphone"
+  },
+  {
+    "id": "93e4b54f3c09b5e8",
+    "name": "Health",
+    "type": "expense",
+    "color": "#a13d5c",
+    "icon": "heart-pulse"
+  },
+  {
+    "id": "e8ea2ffbafbe24c2",
+    "name": "Salary",
+    "type": "income",
+    "color": "#1f7a5c",
+    "icon": "wallet"
+  },
+  {
+    "id": "a84edb4f5245aba7",
+    "name": "Utilities",
+    "type": "expense",
+    "color": "#c9a227",
+    "icon": "zap"
+  },
+  {
+    "id": "e4be23ccbd56f207",
+    "name": "Entertainment",
+    "type": "expense",
+    "color": "#6b4ba1",
+    "icon": "clapperboard"
+  },
+  {
+    "id": "8ac750969391650d",
+    "name": "Business",
+    "type": "expense",
+    "color": "#3d5aa1",
+    "icon": "briefcase"
+  },
+  {
+    "id": "a78e7a6f56039761",
+    "name": "Gift",
+    "type": "income",
+    "color": "#2f9e7a",
+    "icon": "gift"
+  },
+  {
+    "id": "6f9c94c46e672ee5",
+    "name": "Other",
+    "type": "income",
+    "color": "#6b6f76",
+    "icon": "more-horizontal"
+  },
+  {
+    "id": "2f5fc06448326866",
+    "name": "Transport",
+    "type": "expense",
+    "color": "#c9862c",
+    "icon": "car"
+  },
+  {
+    "id": "3c6b2ccff21f80ee",
+    "name": "Rent",
+    "type": "expense",
+    "color": "#7a5c1f",
+    "icon": "home"
+  },
+  {
+    "id": "477c70698fb47de5",
+    "name": "Freelance",
+    "type": "income",
+    "color": "#1f8a6a",
+    "icon": "circle-dollar-sign"
+  },
+  {
+    "id": "de76e1667f3f63ea",
+    "name": "Food",
+    "type": "expense",
+    "color": "#b54834",
+    "icon": "utensils"
+  }
+]

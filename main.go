@@ -43,23 +43,7 @@ func main() {
 		log.Println("seeded default categories for the legacy PIN household")
 	}
 
-<<<<<<< HEAD
-	// DATA_DIR lets these small JSON-file stores (auth PIN/sessions, goals)
-	// be pointed at a persistent volume in production — e.g. Railway —
-	// since the container filesystem elsewhere is wiped on every redeploy.
-	// Defaults to the current directory, matching prior local-dev behavior.
-	dataDir := os.Getenv("DATA_DIR")
-	if dataDir == "" {
-		dataDir = "."
-	}
-	if err := os.MkdirAll(dataDir, 0o755); err != nil {
-		log.Fatalf("failed to create data directory %s: %v", dataDir, err)
-	}
-
-	auth, err := NewAuthStore(filepath.Join(dataDir, "pin.json"), filepath.Join(dataDir, "sessions.json"))
-=======
 	auth, err := NewAuthStore("pin.json", "sessions.json")
->>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372
 	if err != nil {
 		log.Fatalf("failed to initialize auth store: %v", err)
 	}
@@ -68,11 +52,7 @@ func main() {
 	// DATABASE_URL, same reasoning as auth: small, not business data in
 	// the same sense as transactions, and not worth the Postgres plumbing
 	// yet. Revisit if that ever changes.
-<<<<<<< HEAD
-	goals, err := NewFileStore[*Goal](filepath.Join(dataDir, "goals.json"))
-=======
 	goals, err := NewFileStore[*Goal]("goals.json")
->>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372
 	if err != nil {
 		log.Fatalf("failed to initialize goals store: %v", err)
 	}
@@ -148,15 +128,11 @@ func main() {
 
 	handler := withLogging(withCORS(withAuth(auth, users)(mux)))
 
-<<<<<<< HEAD
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
 	addr := ":" + port
-=======
-	addr := ":8080"
->>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372
 	log.Printf("expense tracker API listening on %s", addr)
 	if err := http.ListenAndServe(addr, handler); err != nil {
 		log.Fatalf("server error: %v", err)

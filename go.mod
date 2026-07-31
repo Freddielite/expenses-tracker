@@ -1,6 +1,5 @@
 module expensetracker
 
-<<<<<<< HEAD
 go 1.25.0
 
 require (
@@ -23,8 +22,3 @@ require (
 	golang.org/x/sync v0.21.0 // indirect
 	golang.org/x/text v0.38.0 // indirect
 )
-=======
-go 1.22.2
-
-require github.com/jackc/pgx/v5 v5.7.2
->>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372

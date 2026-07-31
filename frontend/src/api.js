@@ -1,13 +1,21 @@
+<<<<<<< HEAD
 // Falls back to the relative path when VITE_API_URL isn't set. That relative
 // path still works for:
+=======
+// Relative path — always hits whatever origin served this page. Works for:
+>>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372
 // - `npm run dev` (Vite proxies /api to the Go backend, see vite.config.js)
 // - the built app served directly by the Go backend on :8080
 // - a tunnel (cloudflared/ngrok) pointed at that single Go port, since
 //   there's only ever one origin involved, no separate port to reach.
+<<<<<<< HEAD
 // When the frontend is hosted separately (e.g. Vercel) from the backend
 // (e.g. Railway/Fly/Render), set VITE_API_URL to the backend's full origin,
 // such as https://your-backend.up.railway.app — no trailing slash.
 const BASE_URL = `${import.meta.env.VITE_API_URL || ""}/api`;
+=======
+const BASE_URL = `/api`;
+>>>>>>> a7793227352cbe0bf30cddad2eee33d5a7a85372
 const TOKEN_KEY = "ledger-auth-token";
 const ROLE_KEY = "ledger-auth-role";
 
