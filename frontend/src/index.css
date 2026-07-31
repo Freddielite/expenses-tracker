@@ -1,0 +1,133 @@
+:root {
+  /* ---- Core surfaces ---- */
+  --ink: #14151f;
+  --ink-soft: #6b6e85;
+  --paper: #f3f4fa;
+  --paper-raised: #ffffff;
+  --paper-sunken: #eceef7;
+  --line: #e3e5f0;
+  --shadow-color: rgba(30, 27, 75, 0.08);
+
+  /* ---- Semantic accents (names kept for compatibility, values modernized) ---- */
+  --jade: #0ea968;          /* income / positive */
+  --jade-soft: #e3f7ec;
+  --rust: #e6492f;          /* expense / negative */
+  --rust-soft: #fce9e5;
+  --gold: #6552ec;          /* brand accent (was gold, now indigo-violet) */
+  --gold-soft: #ecebfd;
+  --accent-2: #12b7c6;      /* secondary brand accent, gradient partner */
+
+  --gradient-brand: linear-gradient(135deg, #6552ec 0%, #12b7c6 100%);
+
+  /* The balance header always renders on a fixed dark card, in both themes,
+     so its text needs fixed colors instead of the theme-flipping tokens
+     above — otherwise dark mode makes --paper flip to near-black and the
+     numbers disappear against the header's own dark background. */
+  --on-dark-fg: #f6f6fb;
+  --on-dark-fg-soft: rgba(246, 246, 251, 0.66);
+  --on-dark-line: rgba(246, 246, 251, 0.14);
+
+  /* ---- Elevation ---- */
+  --shadow-xs: 0 1px 2px rgba(30, 27, 75, 0.06);
+  --shadow-sm: 0 2px 8px rgba(30, 27, 75, 0.06), 0 1px 2px rgba(30, 27, 75, 0.05);
+  --shadow-md: 0 12px 28px -8px rgba(30, 27, 75, 0.16), 0 2px 6px rgba(30, 27, 75, 0.05);
+  --shadow-lg: 0 24px 48px -16px rgba(30, 27, 75, 0.28);
+  --shadow-glow: 0 8px 24px -6px rgba(101, 82, 236, 0.35);
+
+  /* ---- Shape ---- */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+
+  --font-display: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-ui: "Inter", -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --ink: #f1f1f8;
+  --ink-soft: #9498b0;
+  --paper: #0a0b13;
+  --paper-raised: #15161f;
+  --paper-sunken: #0f1018;
+  --line: #262838;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+
+  --jade: #34d399;
+  --jade-soft: rgba(52, 211, 153, 0.14);
+  --rust: #ff6b5e;
+  --rust-soft: rgba(255, 107, 94, 0.14);
+  --gold: #9c8bff;
+  --gold-soft: rgba(156, 139, 255, 0.14);
+  --accent-2: #3ee1ec;
+
+  --gradient-brand: linear-gradient(135deg, #9c8bff 0%, #3ee1ec 100%);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 16px 32px -10px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 28px 56px -18px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 8px 28px -6px rgba(156, 139, 255, 0.4);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at 14% -8%, rgba(101, 82, 236, 0.1), transparent 40%),
+    radial-gradient(circle at 86% 6%, rgba(18, 183, 198, 0.08), transparent 38%),
+    radial-gradient(circle at 50% 110%, rgba(101, 82, 236, 0.05), transparent 45%),
+    var(--paper);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

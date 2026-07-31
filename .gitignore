@@ -1,0 +1,19 @@
+# --- Backend runtime data (local JSON-file storage mode) ---
+# These are generated at runtime, not source code. Committing them causes
+# stale/conflicting data to ship with the app and creates noisy git diffs
+# every time someone runs it locally.
+backend/data.json
+backend/categories.json
+backend/budgets.json
+backend/recurring.json
+backend/pin.json
+backend/sessions.json
+backend/goals.json
+
+# --- Frontend ---
+frontend/node_modules/
+frontend/dist/
+
+# --- Editor / OS ---
+.vscode/
+.DS_Store
