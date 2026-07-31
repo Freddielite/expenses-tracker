@@ -1,0 +1,328 @@
+.scan-import__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(10, 11, 19, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .scan-import__backdrop {
+    align-items: center;
+    padding: 24px;
+  }
+}
+
+.scan-import__panel {
+  width: 100%;
+  max-width: 560px;
+  max-height: 92vh;
+  max-height: 92dvh;
+  overflow-y: auto;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .scan-import__panel {
+    border-radius: var(--r-lg);
+  }
+}
+
+.scan-import__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--paper-raised);
+  z-index: 1;
+}
+
+.scan-import__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.scan-import__subtitle {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.scan-import__close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+}
+.scan-import__close:hover {
+  color: var(--ink);
+  background: var(--paper-sunken);
+}
+
+.scan-import__body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.scan-import__body--centered {
+  align-items: center;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.scan-import__label {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.scan-import__hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.scan-import__bank-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.scan-import__bank-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--paper-sunken);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scan-import__bank-btn.is-active {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.scan-import__pick-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px;
+  border-radius: var(--r-md);
+  border: none;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.scan-import__spinner {
+  color: var(--gold);
+  animation: scan-import-spin 1s linear infinite;
+}
+
+@keyframes scan-import-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.scan-import__error-icon {
+  color: var(--rust);
+}
+
+.scan-import__progress-track {
+  width: 100%;
+  max-width: 220px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--paper-sunken);
+  overflow: hidden;
+}
+
+.scan-import__progress-fill {
+  height: 100%;
+  background: var(--gradient-brand);
+  transition: width 0.2s ease;
+}
+
+.scan-import__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 48vh;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.scan-import__row {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px;
+  background: var(--paper-sunken);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scan-import__row.is-excluded {
+  opacity: 0.45;
+}
+
+.scan-import__row-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scan-import__checkbox input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.scan-import__desc-input {
+  flex: 1;
+  min-width: 0;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 7px 9px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.scan-import__remove {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+.scan-import__remove:hover {
+  color: var(--rust);
+  background: var(--rust-soft);
+}
+
+.scan-import__row-fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+}
+
+.scan-import__type-toggle {
+  display: flex;
+  gap: 4px;
+  grid-column: 1 / -1;
+}
+
+.scan-import__type-btn {
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scan-import__type-btn.is-active.is-rust {
+  background: var(--rust-soft);
+  border-color: var(--rust);
+  color: var(--rust);
+}
+.scan-import__type-btn.is-active.is-jade {
+  background: var(--jade-soft);
+  border-color: var(--jade);
+  color: var(--jade);
+}
+
+.scan-import__amount-input,
+.scan-import__category-select,
+.scan-import__date-input {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 7px 8px;
+  font-size: 12px;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.scan-import__error-text {
+  margin: 0;
+  font-size: 12px;
+  color: var(--rust);
+}
+
+.scan-import__footer {
+  display: flex;
+  gap: 10px;
+  padding-top: 4px;
+  position: sticky;
+  bottom: 0;
+  background: var(--paper-raised);
+}
+
+.scan-import__secondary {
+  padding: 12px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--paper-sunken);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scan-import__confirm {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--r-md);
+  border: none;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.scan-import__confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .scan-import__row-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
